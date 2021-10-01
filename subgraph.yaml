@@ -2,32 +2,32 @@ specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
-  # - kind: ethereum/contract
-  #   name: Unibond
-  #   network: "mainnet"
-  #   source:
-  #     address: "0xdeAEc5b88596116bdfE08F5c9E1437D8d027C6E1"
-  #     abi: Unibond
-  #     startBlock: 0
-  #   mapping:
-  #     kind: ethereum/events
-  #     apiVersion: 0.0.4
-  #     language: wasm/assemblyscript
-  #     entities:
-  #       - SwapCreated
-  #       - SwapCompleted
-  #       - SwapClosed
-  #     abis:
-  #       - name: Unibond
-  #         file: ./abis/Unibond.json
-  #     eventHandlers:
-  #       - event: SwapCreated(uint256,uint256,address,address,uint256,uint8)
-  #         handler: handleSwapCreated
-  #       - event: SwapCompleted(uint256)
-  #         handler: handleSwapCompleted
-  #       - event: SwapClosed(uint256)
-  #         handler: handleSwapClosed
-  #     file: ./src/Unibond.ts
+  - kind: ethereum/contract
+    name: Unibond
+    network: "mainnet"
+    source:
+      address: "0xdeAEc5b88596116bdfE08F5c9E1437D8d027C6E1"
+      abi: Unibond
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - SwapCreated
+        - SwapCompleted
+        - SwapClosed
+      abis:
+        - name: Unibond
+          file: ./abis/Unibond.json
+      eventHandlers:
+        - event: SwapCreated(uint256,uint256,address,address,uint256,uint8)
+          handler: handleSwapCreated
+        - event: SwapCompleted(uint256)
+          handler: handleSwapCompleted
+        - event: SwapClosed(uint256)
+          handler: handleSwapClosed
+      file: ./src/Unibond.ts
   - kind: ethereum/contract
     name: Univ3NFT
     network: 'mainnet'
