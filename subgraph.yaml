@@ -1,0 +1,50 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  # - kind: ethereum/contract
+  #   name: Unibond
+  #   network: "mainnet"
+  #   source:
+  #     address: "0xdeAEc5b88596116bdfE08F5c9E1437D8d027C6E1"
+  #     abi: Unibond
+  #     startBlock: 0
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.4
+  #     language: wasm/assemblyscript
+  #     entities:
+  #       - SwapCreated
+  #       - SwapCompleted
+  #       - SwapClosed
+  #     abis:
+  #       - name: Unibond
+  #         file: ./abis/Unibond.json
+  #     eventHandlers:
+  #       - event: SwapCreated(uint256,uint256,address,address,uint256,uint8)
+  #         handler: handleSwapCreated
+  #       - event: SwapCompleted(uint256)
+  #         handler: handleSwapCompleted
+  #       - event: SwapClosed(uint256)
+  #         handler: handleSwapClosed
+  #     file: ./src/Unibond.ts
+  - kind: ethereum/contract
+    name: Univ3NFT
+    network: 'mainnet'
+    source:
+      address: '0xc36442b4a4522e871399cd717abdd847ab11fe88'
+      abi: Univ3NFT
+      startBlock: 12369651
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Univ3NFT
+          file: ./abis/Univ3NFT.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/Univ3NFT.ts

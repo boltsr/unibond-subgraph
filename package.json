@@ -1,0 +1,18 @@
+{
+  "name": "unidomain",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "auth": "graph auth https://api/thegraph.com/deploy/",
+    "prep:mainnet": "mustache networks/mainnet.json subgraph.template.yaml > subgraph.yaml && yarn codegen;",
+    "prep:rinkeby": "mustache networks/rinkeby.json subgraph.template.rinkeby.yaml > subgraph.yaml && yarn codegen;",
+    "deploy": "graph deploy --access-token 8e5fe2b11f1a434e9f47d2f2f2e2615d --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ cryptodev7/uniswapv3ids",
+    "deploy:rinkeby": "graph deploy --access-token 8e5fe2b11f1a434e9f47d2f2f2e2615d --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ cryptodev7/unibond"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.22.2",
+    "@graphprotocol/graph-ts": "0.22.1",
+    "mustache": "^4.2.0"
+  }
+}

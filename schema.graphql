@@ -1,0 +1,17 @@
+type SwapList @entity {
+  id: ID!
+  swapId: BigInt!
+  tokenId: BigInt!
+  payToken: Bytes! #address
+  amount: BigInt!
+  assetType: BigInt!
+  creator: Bytes! #address
+  status: BigInt!
+  buyer: Bytes! #address
+}
+
+type TokenHolder @entity {
+  id: ID!
+  tokenId: BigInt!
+  holderAddress: Bytes! #address
+}
