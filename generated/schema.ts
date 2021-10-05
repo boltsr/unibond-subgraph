@@ -16,37 +16,26 @@ export class SwapList extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
-
-    this.set("swapId", Value.fromBigInt(BigInt.zero()));
-    this.set("tokenId", Value.fromBigInt(BigInt.zero()));
-    this.set("payToken", Value.fromBytes(Bytes.empty()));
-    this.set("amount", Value.fromBigInt(BigInt.zero()));
-    this.set("assetType", Value.fromBigInt(BigInt.zero()));
-    this.set("creator", Value.fromBytes(Bytes.empty()));
-    this.set("status", Value.fromBigInt(BigInt.zero()));
-    this.set("buyer", Value.fromBytes(Bytes.empty()));
   }
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save SwapList entity without an ID");
-    if (id) {
-      assert(
-        id.kind == ValueKind.STRING,
-        "Cannot save SwapList entity with non-string ID. " +
-          'Considering using .toHex() to convert the "id" to a string.'
-      );
-      store.set("SwapList", id.toString(), this);
-    }
+    assert(id !== null, "Cannot save SwapList entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save SwapList entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("SwapList", id.toString(), this);
   }
 
   static load(id: string): SwapList | null {
-    return changetype<SwapList | null>(store.get("SwapList", id));
+    return store.get("SwapList", id) as SwapList | null;
   }
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    return value.toString();
   }
 
   set id(value: string) {
@@ -55,7 +44,7 @@ export class SwapList extends Entity {
 
   get swapId(): BigInt {
     let value = this.get("swapId");
-    return value!.toBigInt();
+    return value.toBigInt();
   }
 
   set swapId(value: BigInt) {
@@ -64,7 +53,7 @@ export class SwapList extends Entity {
 
   get tokenId(): BigInt {
     let value = this.get("tokenId");
-    return value!.toBigInt();
+    return value.toBigInt();
   }
 
   set tokenId(value: BigInt) {
@@ -73,7 +62,7 @@ export class SwapList extends Entity {
 
   get payToken(): Bytes {
     let value = this.get("payToken");
-    return value!.toBytes();
+    return value.toBytes();
   }
 
   set payToken(value: Bytes) {
@@ -82,7 +71,7 @@ export class SwapList extends Entity {
 
   get amount(): BigInt {
     let value = this.get("amount");
-    return value!.toBigInt();
+    return value.toBigInt();
   }
 
   set amount(value: BigInt) {
@@ -91,7 +80,7 @@ export class SwapList extends Entity {
 
   get assetType(): BigInt {
     let value = this.get("assetType");
-    return value!.toBigInt();
+    return value.toBigInt();
   }
 
   set assetType(value: BigInt) {
@@ -100,7 +89,7 @@ export class SwapList extends Entity {
 
   get creator(): Bytes {
     let value = this.get("creator");
-    return value!.toBytes();
+    return value.toBytes();
   }
 
   set creator(value: Bytes) {
@@ -109,7 +98,7 @@ export class SwapList extends Entity {
 
   get status(): BigInt {
     let value = this.get("status");
-    return value!.toBigInt();
+    return value.toBigInt();
   }
 
   set status(value: BigInt) {
@@ -118,7 +107,7 @@ export class SwapList extends Entity {
 
   get buyer(): Bytes {
     let value = this.get("buyer");
-    return value!.toBytes();
+    return value.toBytes();
   }
 
   set buyer(value: Bytes) {
@@ -130,31 +119,26 @@ export class TokenHolder extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
-
-    this.set("tokenId", Value.fromBigInt(BigInt.zero()));
-    this.set("holderAddress", Value.fromBytes(Bytes.empty()));
   }
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save TokenHolder entity without an ID");
-    if (id) {
-      assert(
-        id.kind == ValueKind.STRING,
-        "Cannot save TokenHolder entity with non-string ID. " +
-          'Considering using .toHex() to convert the "id" to a string.'
-      );
-      store.set("TokenHolder", id.toString(), this);
-    }
+    assert(id !== null, "Cannot save TokenHolder entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save TokenHolder entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("TokenHolder", id.toString(), this);
   }
 
   static load(id: string): TokenHolder | null {
-    return changetype<TokenHolder | null>(store.get("TokenHolder", id));
+    return store.get("TokenHolder", id) as TokenHolder | null;
   }
 
   get id(): string {
     let value = this.get("id");
-    return value!.toString();
+    return value.toString();
   }
 
   set id(value: string) {
@@ -163,7 +147,7 @@ export class TokenHolder extends Entity {
 
   get tokenId(): BigInt {
     let value = this.get("tokenId");
-    return value!.toBigInt();
+    return value.toBigInt();
   }
 
   set tokenId(value: BigInt) {
@@ -172,7 +156,7 @@ export class TokenHolder extends Entity {
 
   get holderAddress(): Bytes {
     let value = this.get("holderAddress");
-    return value!.toBytes();
+    return value.toBytes();
   }
 
   set holderAddress(value: Bytes) {

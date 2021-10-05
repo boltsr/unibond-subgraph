@@ -7,12 +7,12 @@
     "auth": "graph auth https://api/thegraph.com/deploy/",
     "prep:mainnet": "mustache networks/mainnet.json subgraph.template.yaml > subgraph.yaml && yarn codegen;",
     "prep:rinkeby": "mustache networks/rinkeby.json subgraph.template.rinkeby.yaml > subgraph.yaml && yarn codegen;",
-    "deploy": "graph deploy --access-token 8e5fe2b11f1a434e9f47d2f2f2e2615d --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ cryptodev7/uniswapv3ids",
-    "deploy:rinkeby": "graph deploy --access-token 8e5fe2b11f1a434e9f47d2f2f2e2615d --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ cryptodev7/unibond"
+    "deploy": "graph deploy --access-token 6be15f25a7fc48a7a824f535007417c2 --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ boltsr/unibond",
+    "deploy:rinkeby": "graph deploy --access-token 6be15f25a7fc48a7a824f535007417c2 --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ boltsr/unibond"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.22.2",
-    "@graphprotocol/graph-ts": "0.22.1",
-    "mustache": "^4.2.0"
+    "@graphprotocol/graph-cli": "0.21.1",
+    "@graphprotocol/graph-ts": "0.20.1",
+    "mustache": "^4.1.0"
   }
 }

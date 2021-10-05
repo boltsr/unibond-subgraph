@@ -736,9 +736,7 @@ export class CollectCall__Inputs {
   }
 
   get params(): CollectCallParamsStruct {
-    return changetype<CollectCallParamsStruct>(
-      this._call.inputValues[0].value.toTuple()
-    );
+    return this._call.inputValues[0].value.toTuple() as CollectCallParamsStruct;
   }
 }
 
@@ -840,9 +838,7 @@ export class DecreaseLiquidityCall__Inputs {
   }
 
   get params(): DecreaseLiquidityCallParamsStruct {
-    return changetype<DecreaseLiquidityCallParamsStruct>(
-      this._call.inputValues[0].value.toTuple()
-    );
+    return this._call.inputValues[0].value.toTuple() as DecreaseLiquidityCallParamsStruct;
   }
 }
 
@@ -902,9 +898,7 @@ export class IncreaseLiquidityCall__Inputs {
   }
 
   get params(): IncreaseLiquidityCallParamsStruct {
-    return changetype<IncreaseLiquidityCallParamsStruct>(
-      this._call.inputValues[0].value.toTuple()
-    );
+    return this._call.inputValues[0].value.toTuple() as IncreaseLiquidityCallParamsStruct;
   }
 }
 
@@ -972,9 +966,7 @@ export class MintCall__Inputs {
   }
 
   get params(): MintCallParamsStruct {
-    return changetype<MintCallParamsStruct>(
-      this._call.inputValues[0].value.toTuple()
-    );
+    return this._call.inputValues[0].value.toTuple() as MintCallParamsStruct;
   }
 }
 
